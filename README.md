@@ -1,1 +1,1 @@
-A base docker image for Home Assistant addons that is Debian with Java preinstalled.
+A base Home Assistant addon docker image that is Debian with Java preinstalled (+yq and updating curl).
