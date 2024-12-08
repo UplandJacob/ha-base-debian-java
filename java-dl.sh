@@ -1,8 +1,9 @@
 #!/bin/bash
 
 echo "platform: $PLATFORM"
+echo "arch: $ARCH"
 
-case $PLATFORM in
+case $ARCG in
     aarch64)
         URL="https://download.oracle.com/java/21/latest/jdk-21_linux-aarch64_bin.tar.gz"
         wget -q -O jdk-21.tar.gz $URL
