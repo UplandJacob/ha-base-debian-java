@@ -4,14 +4,18 @@
 case $PLATFORM in
     aarch64)
         URL="https://download.oracle.com/java/21/latest/jdk-21_linux-aarch64_bin.tar.gz"
-        wget -O jdk-21.tar.gz $URL
-        tar -xzf jdk-21.tar.gz -C /usr/local
+        wget -q -O jdk-21.tar.gz $URL
+        tar -xzf jdk-21.tar.gz
         ;;
     armv7)
-        URL="https://download.oracle.com/java/21/latest/jdk-21_linux-armv7_bin.deb"
+        URL="https://download.oracle.com/java/21/latest/jdk-21_linux-aarch64_bin.tar.gz"
+        wget -q -O jdk-21.tar.gz $URL
+        tar -xzf jdk-21.tar.gz
         ;;
     armhf)
-        URL="https://download.oracle.com/java/21/latest/jdk-21_linux-armhf_bin.deb"
+        URL="https://download.oracle.com/java/21/latest/jdk-21_linux-aarch64_bin.tar.gz"
+        wget -q -O jdk-21.tar.gz $URL
+        tar -xzf jdk-21.tar.gz
         ;;
     amd64)
         URL="https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb"
