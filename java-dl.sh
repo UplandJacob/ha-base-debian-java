@@ -25,6 +25,6 @@ esac
 
 wget -O jdk-21.deb $URL
 
-sudo dpkg -i jdk-21.deb
+dpkg -i jdk-21.deb
 
 echo "Java 21 installed successfully!"
