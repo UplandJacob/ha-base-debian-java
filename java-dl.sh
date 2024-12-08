@@ -23,7 +23,7 @@ case $PLATFORM in
         ;;
 esac
 
-wget -Oq jdk-21.deb $URL
+wget -q -O jdk-21.deb $URL
 
 dpkg -i jdk-21.deb
 
