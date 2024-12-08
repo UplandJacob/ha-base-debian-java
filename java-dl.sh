@@ -1,8 +1,7 @@
 #!/bin/bash
 
-ARCH=$(uname -m)
 
-case $ARCH in
+case $PLATFORM in
     aarch64)
         URL="https://download.oracle.com/java/21/latest/jdk-21_linux-aarch64_bin.deb"
         ;;
