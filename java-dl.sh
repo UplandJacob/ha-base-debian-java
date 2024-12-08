@@ -25,7 +25,9 @@ case $ARCH in
         dpkg -i jdk-21.deb
         ;;
     i386)
-        URL="https://download.oracle.com/java/21/latest/jdk-21_linux-i386_bin.deb"
+        URL="wget https://openems.io/download/temurin-21-jdk-armhf_21.0.6+2.deb"
+        wget -q -O jdk-21.deb $URL
+        dpkg -i jdk-21.deb
         ;;
     *)
         echo "Unsupported architecture: $ARCH"
