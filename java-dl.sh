@@ -9,17 +9,17 @@ case $ARCH in
         ;;
     armv7)
         URL=""
-        apt-get install default-jre #java 17
+        apt-get install -y default-jre #java 17
         ;;
     armhf)
         URL=""
-        apt-get install default-jre #java 17
+        apt-get install -y default-jre #java 17
         ;;
     amd64)
         URL="https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jdk_x64_linux_hotspot_21.0.5_11.tar.gz"
         ;;
     i386)
-        apt-get install default-jre #java 17
+        apt-get install -y default-jre #java 17
         ;;
     *)
         echo "Unsupported architecture: $ARCH"
