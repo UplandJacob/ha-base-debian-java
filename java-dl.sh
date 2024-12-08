@@ -5,27 +5,19 @@ echo "arch: $ARCH"
 
 case $ARCH in
     aarch64)
-        URL="https://download.oracle.com/java/21/latest/jdk-21_linux-aarch64_bin.tar.gz"
-        wget -q -O jdk-21.tar.gz $URL
-        tar -xzf jdk-21.tar.gz
+        URL="https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B36/OpenJDK21U-jdk_aarch64_linux_hotspot_21.0.0_36.tar.gz"
         ;;
     armv7)
-        URL="wget https://openems.io/download/temurin-21-jdk-armv7_21.0.6+2.deb"
-        wget -q -O jdk-21.deb $URL
-        dpkg -i jdk-21.deb
+        URL="https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B36/OpenJDK21U-jdk_arm_linux_hotspot_21.0.0_36.tar.gz"
         ;;
     armhf)
-        URL="wget https://openems.io/download/temurin-21-jdk-armhf_21.0.6+2.deb"
-        wget -q -O jdk-21.deb $URL
-        dpkg -i jdk-21.deb
+        URL="https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B36/OpenJDK21U-jdk_arm_linux_hotspot_21.0.0_36.tar.gz"
         ;;
     amd64)
-        URL="https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb"
-        wget -q -O jdk-21.deb $URL
-        dpkg -i jdk-21.deb
+        URL="https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B36/OpenJDK21U-jdk_x64_linux_hotspot_21.0.0_36.tar.gz"
         ;;
     i386)
-        
+        URL="https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21%2B36/OpenJDK21U-jdk_i386_linux_hotspot_21.0.0_36.tar.gz"
         ;;
     *)
         echo "Unsupported architecture: $ARCH"
@@ -33,10 +25,17 @@ case $ARCH in
         ;;
 esac
 
-#wget -q -O jdk-21.deb $URL
+# Download and extract the package
+wget -q -O jdk-21.tar.gz $URL
+tar -xzf jdk-21.tar.gz -C /usr/local
 
-#dpkg -i jdk-21.deb
+# Set JAVA_HOME and update PATH
+JAVA_HOME=$(find /usr/local -maxdepth 1 -type d -name "jdk-21*")
+echo "export JAVA_HOME=$JAVA_HOME" >> ~/.bashrc
+echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> ~/.bashrc
+
+# Apply changes to PATH
+source ~/.bashrc
 
 echo "Java version:"
-
 java --version
