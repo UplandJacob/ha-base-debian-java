@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "platform: $PLATFORM"
 
 case $PLATFORM in
     aarch64)
