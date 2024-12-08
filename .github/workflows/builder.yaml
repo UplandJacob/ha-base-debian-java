@@ -49,6 +49,7 @@ jobs:
             --build-arg REPO_URL=https://github.com/${{ env.REPO_NAME_LC }} \
             --build-arg VERSION=${{ env.VERSION }} \
             --build-arg PLATFORM=${{ env.PLATFORM }} \
+            --build-arg ARXH=${{ matrix.archb}} \
             --push \
             -t ghcr.io/${{ env.REPO_NAME_LC }}-${{ matrix.arch }}:latest .
 
