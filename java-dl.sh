@@ -23,8 +23,10 @@ case $PLATFORM in
         ;;
 esac
 
-wget -O jdk-21.deb $URL
+wget -O -nv jdk-21.deb $URL
 
 dpkg -i jdk-21.deb
 
-echo "Java 21 installed successfully!"
+echo "Java 21 version:"
+
+java --version
