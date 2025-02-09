@@ -5,7 +5,7 @@ echo "arch: $ARCH"
 
 case $ARCH in
     aarch64)
-        URL="https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jdk_aarch64_linux_hotspot_21.0.5_11.tar.gz"
+        URL="https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.6%2B7/OpenJDK21U-jre_aarch64_linux_hotspot_21.0.6_7.tar.gz"
         ;;
     armv7)
         URL=""
@@ -16,7 +16,7 @@ case $ARCH in
         apt-get install -y default-jre #java 17
         ;;
     amd64)
-        URL="https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jdk_x64_linux_hotspot_21.0.5_11.tar.gz"
+        URL="https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.6%2B7/OpenJDK21U-jdk_x64_linux_hotspot_21.0.6_7.tar.gz"
         ;;
     i386)
         apt-get install -y default-jre #java 17
