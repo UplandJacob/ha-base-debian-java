@@ -51,8 +51,8 @@
         "\\s*(aarch64|amd64|armhf|armv7|i386):\\s*[\"']?(?<depName>.*?):(?<currentValue>[\\w\\.-]+?)[\"']?\\s"
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "regex:^(?<major>\\d{4})\\.(?<minor>\\d{1,2})\\.(?<patch>\\d{1,2})$",
-      "extractVersionTemplate": "^trixie-(?<version>.*)$"
+      "versioningTemplate": "regex:^(?:\\w+-)?(?<major>\\d{4})\\.(?<minor>\\d{1,2})\\.(?<patch>\\d{1,2})$",
+      "extractVersionTemplate": "^(?:\\w+-)?(?<version>.*)$"
     }
   ]
 }
