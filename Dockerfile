@@ -1,4 +1,4 @@
-ARG BUILD_FROM
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base-debian:trixie-2025.12.0
 FROM ${BUILD_FROM}
 ARG PLATFORM
 ARG ARCH
@@ -18,6 +18,7 @@ RUN [ "$ARCH" = "aarch64" ] && YQ_ARCH="arm64" || YQ_ARCH="$ARCH" \
     chmod +x /usr/local/bin/yq \
     yq --version
 
-RUN ./java-dl.sh
+RUN ./java-dl.sh && \
+    apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN rm ./java-dl.sh
