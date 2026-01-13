@@ -50,6 +50,7 @@ jobs:
             --build-arg PLATFORM=${{ env.PLATFORM }} \
             --build-arg ARCH=${{ matrix.arch }} \
             --push \
+            -t ghcr.io/${{ env.REPO_NAME_LC }}-${{ matrix.arch }}:${{ env.VERSION }}
             -t ghcr.io/${{ env.REPO_NAME_LC }}-${{ matrix.arch }}:latest .
 
 
