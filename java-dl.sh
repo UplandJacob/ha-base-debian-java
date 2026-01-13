@@ -3,12 +3,11 @@
 echo "platform: $PLATFORM"
 echo "arch: $ARCH"
 
+
+
 case $ARCH in
     aarch64)
-        wget https://packages.microsoft.co -O packages-microsoft-prod.deb
-        dpkg -i packages-microsoft-prod.deb
-        apt-get update
-        apt-get install -y msopenjdk-21
+        apt-get install -y openjdk-21-jdk
         ;;
     armv7)
         apt-get install -y default-jre #java 17
@@ -17,10 +16,7 @@ case $ARCH in
         apt-get install -y default-jre #java 17
         ;;
     amd64)
-        wget https://packages.microsoft.com -O packages-microsoft-prod.deb
-        dpkg -i packages-microsoft-prod.deb
-        apt-get update
-        apt-get install -y msopenjdk-21
+        apt-get install -y openjdk-21-jdk
         ;;
     i386)
         apt-get install -y default-jre #java 17
