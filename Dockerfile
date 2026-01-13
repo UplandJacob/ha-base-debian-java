@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     curl
 
 # renovate: datasource=github-releases depName=mikefarah/yq
-ENV YQ_VERSION="v4.50.0"
+ENV YQ_VERSION="v4.50.1"
 RUN ["$BUILD_ARCH" = "aarch64" ] && ARCH="arm64" || ARCH="$BUILD_ARCH" \
     echo "ARCH = ${ARCH}" && \
     curl https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_${ARCH} -o /usr/local/bin/yq && \
