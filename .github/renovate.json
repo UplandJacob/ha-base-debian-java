@@ -1,0 +1,49 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "rebaseWhen": "conflicted",
+  "addLabels": [
+    "dependencies"
+  ],
+  "commitMessagePrefix": "⬆️",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$/",
+        "/(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$/"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-zA-Z0-9-._]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s(?:ENV|ARG)\\s+[A-Za-z0-9_]+?_VERSION[ =][\"']?(?<currentValue>.+?)[\"']?\\s"
+      ]
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)Dockerfile$/"
+      ],
+      "matchStrings": [
+        "RUN(?s:.*?)(?:apt(?:-get)?)\\s+.*?install[\\S\\s]*?(?<packagesAndVersions>(?:[a-z0-9.-]+=[^\\s]+(?:[\\s\\\\\\n])*)+)",
+        "(?<depName>[a-z0-9-]+)=(?<currentValue>[^\\s]+)"
+      ],
+      "matchStringsStrategy": "combination",
+      "datasourceTemplate": "repology",
+      "versioningTemplate": "deb"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)Dockerfile$/",
+        "/(^|/)build.yaml$/"
+      ],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
+        "(aarch64|amd64):\\s[\"']?(?<depName>.*?):(?<currentValue>.*?)[\"']?\\s"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ]
+}

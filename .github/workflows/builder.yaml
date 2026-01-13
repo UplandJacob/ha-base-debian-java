@@ -34,7 +34,7 @@ jobs:
       - name: Set BUILD_FROM, PLATFORM, and VERSION variables
         run: |
           BUILD_FROM=$(yq e ".build_from.${{ matrix.arch }}" ./${{ matrix.addon }}/build.yaml)
-          PLATFORM=$(yq e ".platform.${{ matrix.arch }}" ./${{ matrix.addon }}/build.yaml)
+          [ "${{ matrix.arch }}" == "armv7" ] && PLATFORM="arm/v7" || PLATFORM="${{ matrix.arch }}"
           VERSION=$(yq e ".version" ./${{ matrix.addon }}/config.yaml)
           echo "BUILD_FROM=${BUILD_FROM}" >> $GITHUB_ENV
           echo "PLATFORM=${PLATFORM}" >> $GITHUB_ENV
