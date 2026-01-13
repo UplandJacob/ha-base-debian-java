@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM ${BUILD_FROM}
 ARG PLATFORM
-ARG ARCH
+ARG BUILD_ARCH
 
 COPY java-dl.sh java-dl.sh
 RUN chmod 777 ./java-dl.sh
