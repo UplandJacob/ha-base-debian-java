@@ -5,7 +5,7 @@ echo "arch: $ARCH"
 
 case $ARCH in
     aarch64)
-        wget https://packages.microsoft.com/config/debian/$(lsb_release -rs)/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+        wget https://packages.microsoft.co -O packages-microsoft-prod.deb
         dpkg -i packages-microsoft-prod.deb
         apt-get update
         apt-get install -y msopenjdk-21
@@ -17,7 +17,7 @@ case $ARCH in
         apt-get install -y default-jre #java 17
         ;;
     amd64)
-        wget https://packages.microsoft.com/config/debian/$(lsb_release -rs)/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+        wget https://packages.microsoft.com -O packages-microsoft-prod.deb
         dpkg -i packages-microsoft-prod.deb
         apt-get update
         apt-get install -y msopenjdk-21
