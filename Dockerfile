@@ -7,8 +7,8 @@ COPY java-dl.sh java-dl.sh
 RUN chmod 777 ./java-dl.sh
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    wget:1.25.0-2 \
-    curl:8.14.1-2+deb13u2
+    wget=1.25.0-2 \
+    curl=8.14.1-2+deb13u2
 
 # renovate: datasource=github-releases depName=mikefarah/yq
 ENV YQ_VERSION="v4.50.1"
