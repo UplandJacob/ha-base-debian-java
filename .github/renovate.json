@@ -51,7 +51,8 @@
         "\\s*(aarch64|amd64|armhf|armv7|i386):\\s*[\"']?(?<depName>.*?):(?<currentValue>[\\w\\.-]+?)[\"']?\\s"
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "loose"
+      "versioningTemplate": "loose",
+      "extractVersionTemplate": "^trixie-(?<version>.*)$"
     }
   ]
 }
