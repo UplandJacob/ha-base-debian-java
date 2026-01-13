@@ -11,7 +11,8 @@
   "packageRules": [
     {
       "matchManagers": ["regex"],
-      "matchFileNames": ["build.yaml"],
+      "matchFileNames": ["build.yaml", "Dockerfile"],
+      "matchDatasources": ["docker"],
       "groupName": "Home Assistant Base Images"
     }
   ],
