@@ -49,10 +49,10 @@
       "matchStringsStrategy": "any",
       "matchStrings": [
         "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
-        "\\s*(aarch64|amd64|armhf|armv7|i386):\\s*[\"']?(?<depName>.*?):(?<codename>[a-z]+)-?(?<currentValue>[\\w\\.-]+?)[\"']?\\s"
+        "\\s*(aarch64|amd64|armhf|armv7|i386):\\s*[\"']?(?<depName>.*?):(?<currentValue>[a-z]*-?[\\w\\.-]+?)[\"']?\\s"
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "regex:^(?:{{{codename}}}-)?(?<major>\\d{1,4})\\.(?<minor>\\d{1,3})\\.(?<patch>\\d{1,3})$"
+      "versioningTemplate": "regex:^(?<compatibility>[a-z]+)?-?(?<major>\\d{1,4})\\.(?<minor>\\d{1,3})\\.(?<patch>\\d{1,3})$"
       // "extractVersionTemplate": "^(?:\\w+-)?(?<version>.*)$"
     }
   ]
