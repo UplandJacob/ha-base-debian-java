@@ -4,4 +4,4 @@
 
 This was made to make building my [Home Assistant addons](https://github.com/UplandJacob/Upland-HA-Addons/) faster.
 
-This container has Java 21 (Microsoft) for amd64 and aarch64 architectures, but Oracle no longer releases newer versions of Java for 32-bit architectures, so armv7, armhf, and i386 are stuck with Java 17.
+This container has OpenJDK 21 for amd64 and aarch64 architectures, and only Java 17 for armv7, armhf.
