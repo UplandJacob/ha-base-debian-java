@@ -4,4 +4,4 @@
 
 This was made to make building my [Home Assistant addons](https://github.com/UplandJacob/Upland-HA-Addons/) faster.
 
-This container has OpenJDK 21 for amd64 and aarch64 architectures, and only Java 17 for armv7, armhf.
+This container has OpenJDK 21 for amd64 and aarch64 architectures, and only Java 17 for armv7, armhf, and i386.
