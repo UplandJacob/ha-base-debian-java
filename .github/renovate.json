@@ -10,6 +10,12 @@
   "commitMessagePrefix": "⬆️",
   "packageRules": [
     {
+      "matchPackageNames": [
+        "mikefarah/yq"
+      ],
+      "automerge": true
+    },
+    {
       "matchManagers": [
         "custom.regex"
       ],
