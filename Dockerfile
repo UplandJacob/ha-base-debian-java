@@ -9,7 +9,7 @@ RUN chmod 777 ./java-dl.sh
 # renovate: depName=wget
 ENV WGET_VERSION=1.25.0-2
 # renovate: depName=curl
-ENV CURL_VERSION=8.14.1-2+deb13u2
+ENV CURL_VERSION=8.14.1-2+deb13u4
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     wget=${WGET_VERSION} \
