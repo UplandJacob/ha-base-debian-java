@@ -46,12 +46,11 @@
         "/(^|/)Dockerfile$/"
       ],
       "matchStrings": [
-        "(?:apt(?:-get)?)\\s+.*?install[\\S\\s]*?(?<packagesAndVersions>(?:[a-z0-9.-]+=[^\\s]+(?:[\\s\\\\\\n])*)+)",
-        "(?<depName>[a-z0-9-]+)=(?<currentValue>[^\\s]+)"
+        "# ?renovate:? ?depName=(?<depName>[a-zA-Z0-9.+-]+) ?deb-source=(?<registryUrl>[^;\\s]+)(?:[;\\s]{,2}codename=(?<codename>[^;\\s]+))?\\s(?:ENV|ARG)\\s+[A-Za-z0-9_]+?_VERSION[ =][\"']?(?<currentValue>[^\\s\"']+)"
       ],
-      "matchStringsStrategy": "combination",
-      "datasourceTemplate": "repology",
-      "versioningTemplate": "deb"
+      "datasourceTemplate": "deb",
+      "depNameTemplate": "{{depName}}",
+      "registryUrlTemplate": "{{registryUrl}}"
     },
     {
       "customType": "regex",

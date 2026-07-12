@@ -6,9 +6,14 @@ ARG ARCH
 COPY java-dl.sh java-dl.sh
 RUN chmod 777 ./java-dl.sh
 
+# renovate: depName=wget
+ENV WGET_VERSION=1.25.0-2
+# renovate: depName=curl
+ENV CURL_VERSION=8.14.1-2+deb13u2
+
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    wget=1.25.0-2 \
-    curl=8.14.1-2+deb13u2
+    wget=${WGET_VERSION} \
+    curl=${CURL_VERSION}
 
 # renovate: datasource=github-releases depName=mikefarah/yq
 ENV YQ_VERSION="v4.53.3"
