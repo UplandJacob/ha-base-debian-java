@@ -1,1 +1,3 @@
-version: 0.3.4
+version: 1.0.0
+name: HA Base Debian Java
+description: A base Home Assistant app Docker image based on HA's Debian Base with Java preinstalled
