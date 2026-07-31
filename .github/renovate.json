@@ -15,6 +15,16 @@
       "automerge": true
     },
     {
+      "matchFileNames": [
+        "Dockerfile"
+      ],
+      "matchDatasources": [
+        "deb"
+      ],
+      "groupName": "Debian Packages",
+      "automerge": true
+    },
+    {
       "matchPackageNames": [
         "mikefarah/yq"
       ],
