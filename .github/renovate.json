@@ -10,6 +10,11 @@
   "commitMessagePrefix": "⬆️",
   "packageRules": [
     {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions",
+      "automerge": true
+    },
+    {
       "matchPackageNames": [
         "mikefarah/yq"
       ],
