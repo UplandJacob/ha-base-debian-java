@@ -8,12 +8,13 @@ ENV WGET_VERSION=1.25.0-2
 # renovate: deb=curl
 ENV CURL_VERSION=8.14.1-2+deb13u4
 # renovate: deb=openjdk-25-jdk
-ENV JDK_VERSION=25.0.3+9-2~deb13u1
+ENV JAVA_VERSION=25.0.3+9-2~deb13u1
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     wget=${WGET_VERSION} \
     curl=${CURL_VERSION} \
-    openjdk-25-jdk=${JDK_VERSION} && \
+    openjdk-25-jdk=${JAVA_VERSION} \
+    openjdk-25-jre=${JAVA_VERSION} && \
     apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* && \
     java --version
 
