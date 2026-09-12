@@ -6,7 +6,7 @@ ARG ARCH
 # renovate: deb=wget
 ENV WGET_VERSION=1.25.0-2
 # renovate: deb=curl
-ENV CURL_VERSION=8.14.1-2+deb13u4
+ENV CURL_VERSION=8.14.1-2+deb13u5
 # renovate: deb=openjdk-25-jdk
 ENV JAVA_VERSION=25.0.3+9-2~deb13u1
 
