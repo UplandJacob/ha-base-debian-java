@@ -4,7 +4,7 @@ ARG PLATFORM
 ARG ARCH
 
 # renovate: deb=openjdk-25-jdk
-ENV JAVA_VERSION=25.0.3+9-2~deb13u1
+ENV JAVA_VERSION=25.0.5+8-1~deb13u1
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     wget curl \
